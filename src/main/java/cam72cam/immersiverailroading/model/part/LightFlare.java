@@ -155,7 +155,7 @@ public class LightFlare<T extends EntityMoveableRollingStock> {
         Vec3d playerOffset = VecUtil.rotateWrongYaw(stock.getPosition().subtract(MinecraftClient.getPlayer().getPosition()), 180 - (stock.getRotationYaw())).
                 subtract(flareOffset).scale(forward ? 1 : -1);
 
-        int viewAngle = 45;
+        int viewAngle = 90;
         float intensity = 1 - Math.abs(Math.max(-viewAngle, Math.min(viewAngle, VecUtil.toWrongYaw(playerOffset) - 90))) / viewAngle;
         intensity *= Math.abs(playerOffset.x/(50 * stock.gauge.scale()));
         intensity = Math.min(intensity, 1.5f);
